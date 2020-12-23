@@ -28,6 +28,7 @@ export default function IndexPage() {
 					sizes='16x16'
 				/>
 				<link rel='stylesheet' href='https://rsms.me/inter/inter.css' />
+				<title>Jira - Clone</title>
 			</Head>
 			<div className='flex h-screen'>
 				<aside className='w-64 px-8 py-4 bg-gray-100 border-r'>
