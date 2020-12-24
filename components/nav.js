@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function Nav({ links }) {
 	return links.map(link => (
-		<div className='mt-2 -mx-3' key={link.label}>
+		<div className='mt-1 -mx-3' key={link.label}>
 			<a
 				href='#'
 				className={`flex items-center justify-between px-3 py-2 mt-2 text-sm font-medium text-gray-700 rounded-lg ${
