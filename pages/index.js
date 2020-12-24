@@ -66,7 +66,66 @@ export default function IndexPage() {
 					</nav>
 				</aside>
 				<div className='flex-1 min-w-0 bg-white'>
-					<header className='border-b-2 border-gray-200'></header>
+					<div className='border-b-2 border-gray-200'>
+						<header className='px-6'>
+							<div className='flex items-center justify-between py-3 border-b border-gray-200'>
+								<div className='relative'>
+									<span className='absolute inset-y-0 left-0 flex items-center pl-3'>
+										<svg
+											className='w-6 h-6 text-gray-600'
+											fill='none'
+											stroke='currentColor'
+											viewBox='0 0 24 24'
+											xmlns='http://www.w3.org/2000/svg'
+										>
+											<path
+												strokeLinecap='round'
+												strokeLinejoin='round'
+												strokeWidth={2}
+												d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z'
+											/>
+										</svg>
+									</span>
+									<label htmlFor='search' className='sr-only'>
+										Search
+									</label>
+									<input
+										type='text'
+										name='search'
+										id='serach'
+										placeholder='Search'
+										autoComplete='off'
+										className='py-2 pl-12 pr-4 placeholder-gray-400 border border-gray-400 rounded-md'
+									/>
+								</div>
+								<div className='flex items-center'>
+									<button>
+										<svg
+											className='w-6 h-6 text-gray-600'
+											fill='none'
+											stroke='currentColor'
+											viewBox='0 0 24 24'
+											xmlns='http://www.w3.org/2000/svg'
+										>
+											<path
+												strokeLinecap='round'
+												strokeLinejoin='round'
+												strokeWidth={2}
+												d='M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9'
+											/>
+										</svg>
+									</button>
+									<button className='ml-6'>
+										<img
+											className='object-cover rounded-full w-9 h-9'
+											src='https://images.unsplash.com/photo-1463453091185-61582044d556?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=3.5&w=144&h=144&q=80'
+											alt='man smiling'
+										/>
+									</button>
+								</div>
+							</div>
+						</header>
+					</div>
 					<main></main>
 				</div>
 			</div>
