@@ -216,16 +216,69 @@ export default function IndexPage() {
 						</header>
 					</div>
 					<main className='flex p-3 space-x-2'>
-						<section className='p-2 bg-gray-100 rounded-md w-96'>
+						<section className='p-3 bg-gray-100 rounded-md w-96'>
 							<h3 className='text-sm font-medium'>Backlog</h3>
+							<ol>
+								<li className='p-5 my-4 bg-white rounded-md shadow'>
+									<div className='flex items-center justify-between space-x-4'>
+										<h4>
+											Provide documentations on integrations and get them
+											reviewed
+										</h4>
+										<img
+											className='object-cover rounded-full w-7 h-7'
+											src='https://images.unsplash.com/photo-1463453091185-61582044d556?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2.5&w=72&h=72&q=80'
+											alt=''
+										/>
+									</div>
+									<div className='flex items-center justify-between mt-4 text-gray-600'>
+										<p>Sep 14</p>
+										<p>Enhancement</p>
+									</div>
+								</li>
+								<li className='p-5 my-4 bg-white rounded-md shadow'>
+									<div className='flex items-center justify-between space-x-4'>
+										<h4>
+											Provide documentations on integrations and get them
+											reviewed
+										</h4>
+										<img
+											className='object-cover rounded-full w-7 h-7'
+											src='https://images.unsplash.com/photo-1463453091185-61582044d556?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2.5&w=72&h=72&q=80'
+											alt=''
+										/>
+									</div>
+									<div className='flex items-center justify-between mt-4 text-gray-600'>
+										<p>Sep 14</p>
+										<p>Enhancement</p>
+									</div>
+								</li>
+								<li className='p-5 my-4 bg-white rounded-md shadow'>
+									<div className='flex items-center justify-between space-x-4'>
+										<h4>
+											Provide documentations on integrations and get them
+											reviewed
+										</h4>
+										<img
+											className='object-cover rounded-full w-7 h-7'
+											src='https://images.unsplash.com/photo-1463453091185-61582044d556?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2.5&w=72&h=72&q=80'
+											alt=''
+										/>
+									</div>
+									<div className='flex items-center justify-between mt-4 text-gray-600'>
+										<p>Sep 14</p>
+										<p>Enhancement</p>
+									</div>
+								</li>
+							</ol>
 						</section>
-						<section className='p-2 bg-gray-100 rounded-md w-96'>
+						<section className='p-3 bg-gray-100 rounded-md w-96'>
 							<h3 className='text-sm font-medium'>In Progress</h3>
 						</section>
-						<section className='p-2 bg-gray-100 rounded-md w-96'>
+						<section className='p-3 bg-gray-100 rounded-md w-96'>
 							<h3 className='text-sm font-medium'>Testing</h3>
 						</section>
-						<section className='p-2 bg-gray-100 rounded-md w-96'>
+						<section className='p-3 bg-gray-100 rounded-md w-96'>
 							<h3 className='text-sm font-medium'>Deployed</h3>
 						</section>
 					</main>
