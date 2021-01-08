@@ -17,6 +17,8 @@ const tags = [
 	{ href: '#', label: 'v2.0' },
 	{ href: '#', label: 'Enhancement' },
 	{ href: '#', label: 'Design' },
+	{ href: '#', label: 'Design 1' },
+	{ href: '#', label: 'Design 2' },
 ];
 
 const users = [
@@ -56,7 +58,7 @@ export default function IndexPage() {
 				<title>Jira - Clone</title>
 			</Head>
 			<div className='flex h-screen'>
-				<aside className='w-64 px-8 py-4 bg-gray-100 border-r'>
+				<aside className='w-64 px-8 py-4 overflow-auto bg-gray-100 border-r'>
 					<img className='w-9 h-9' src='/logo.svg' alt='task manager logo' />
 					<nav>
 						<h3 className='mt-6 text-xs font-bold tracking-wide text-gray-600 uppercase'>
@@ -90,7 +92,7 @@ export default function IndexPage() {
 						</div>
 					</nav>
 				</aside>
-				<div className='flex-1 min-w-0 overflow-hidden bg-white'>
+				<div className='flex flex-col flex-1 min-w-0 overflow-hidden bg-white'>
 					<div className='border-b-2 border-gray-200'>
 						<header className='px-6'>
 							<div className='flex items-center justify-between py-3 border-b border-gray-200'>
@@ -126,7 +128,7 @@ export default function IndexPage() {
 								<div className='flex items-center'>
 									<button>
 										<svg
-											className='w-6 h-6 text-gray-500'
+											className='w-6 h-6 text-gray-400'
 											fill='none'
 											stroke='currentColor'
 											viewBox='0 0 24 24'
@@ -216,50 +218,52 @@ export default function IndexPage() {
 							</div>
 						</header>
 					</div>
-					<main className='flex p-3 space-x-3'>
-						<section className='flex-shrink-0 p-3 bg-gray-100 rounded-md w-80'>
-							<h3 className='text-sm font-medium'>Backlog</h3>
-							<ol>
-								{users.map(user => (
-									<li key={user.name} className='my-3'>
+					<main className='flex-1 overflow-auto'>
+						<div className='inline-flex p-3 space-x-3'>
+							<section className='flex-shrink-0 p-3 bg-gray-100 rounded-md w-80'>
+								<h3 className='text-sm font-medium'>Backlog</h3>
+								<ol>
+									{users.map(user => (
+										<li key={user.name} className='my-3'>
+											<Card />
+										</li>
+									))}
+								</ol>
+							</section>
+							<section className='flex-shrink-0 p-3 bg-gray-100 rounded-md w-80'>
+								<h3 className='text-sm font-medium'>In Progress</h3>
+								<ol>
+									{users.map(user => (
+										<li key={user.name} className='my-3'>
+											<Card />
+										</li>
+									))}
+									{users.map(user => (
+										<li key={user.name} className='my-3'>
+											<Card />
+										</li>
+									))}
+								</ol>
+							</section>
+							<section className='flex-shrink-0 p-3 bg-gray-100 rounded-md w-80'>
+								<h3 className='text-sm font-medium'>Testing</h3>
+								<ol>
+									<li className='my-3'>
 										<Card />
 									</li>
-								))}
-							</ol>
-						</section>
-						<section className='flex-shrink-0 p-3 bg-gray-100 rounded-md w-80'>
-							<h3 className='text-sm font-medium'>In Progress</h3>
-							<ol>
-								{users.map(user => (
-									<li key={user.name} className='my-3'>
-										<Card />
-									</li>
-								))}
-								{users.map(user => (
-									<li key={user.name} className='my-3'>
-										<Card />
-									</li>
-								))}
-							</ol>
-						</section>
-						<section className='flex-shrink-0 p-3 bg-gray-100 rounded-md w-80'>
-							<h3 className='text-sm font-medium'>Testing</h3>
-							<ol>
-								<li className='my-3'>
-									<Card />
-								</li>
-							</ol>
-						</section>
-						<section className='flex-shrink-0 p-3 bg-gray-100 rounded-md w-80'>
-							<h3 className='text-sm font-medium'>Deployed</h3>
-							<ol>
-								{users.map(user => (
-									<li key={user.name} className='my-3'>
-										<Card />
-									</li>
-								))}
-							</ol>
-						</section>
+								</ol>
+							</section>
+							<section className='flex-shrink-0 p-3 bg-gray-100 rounded-md w-80'>
+								<h3 className='text-sm font-medium'>Deployed</h3>
+								<ol>
+									{users.map(user => (
+										<li key={user.name} className='my-3'>
+											<Card />
+										</li>
+									))}
+								</ol>
+							</section>
+						</div>
 					</main>
 				</div>
 			</div>
