@@ -22,7 +22,7 @@ export default function Sidebar({ isOpen, toggleSidebar }) {
 	return (
 		<aside
 			className={`fixed inset-y-0 left-0 z-10 w-64 px-8 py-4 overflow-auto transition-transform transform ${
-				isOpen ? '-translate-x-full' : 'translate-x-0'
+				isOpen ? '-translate-x-full ease-in' : 'translate-x-0 ease-out'
 			}  bg-gray-100 border-r lg:static lg:inset-auto lg:translate-x-0`}
 		>
 			<div className='flex items-center justify-between'>
