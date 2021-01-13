@@ -1,25 +1,10 @@
+import * as React from 'react';
 import Head from 'next/head';
+
 import Avatar from '../components/avatar';
 import Card from '../components/card';
-import Nav from '../components/nav';
-
-const issues = [
-	{ href: '#', label: 'All', value: 36, active: true },
-	{ href: '#', label: 'Assigned to me', value: 3 },
-	{ href: '#', label: 'Created by me', value: 11 },
-	{ href: '#', label: 'Archived' },
-];
-
-const tags = [
-	{ href: '#', label: 'Bug' },
-	{ href: '#', label: 'Feature request' },
-	{ href: '#', label: 'Marketing' },
-	{ href: '#', label: 'v2.0' },
-	{ href: '#', label: 'Enhancement' },
-	{ href: '#', label: 'Design' },
-	{ href: '#', label: 'Design 1' },
-	{ href: '#', label: 'Design 2' },
-];
+import Column from '../components/column';
+import Sidebar from '../components/sidebar';
 
 const users = [
 	{
@@ -45,6 +30,10 @@ const users = [
 ];
 
 export default function IndexPage() {
+	const [isSidebarOpen, setIsSidebarOpen] = React.useState(false);
+
+	const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
+
 	return (
 		<>
 			<Head>
@@ -58,44 +47,30 @@ export default function IndexPage() {
 				<title>Jira - Clone</title>
 			</Head>
 			<div className='flex h-screen'>
-				<aside className='w-64 px-8 py-4 overflow-auto bg-gray-100 border-r'>
-					<img className='w-9 h-9' src='/logo.svg' alt='task manager logo' />
-					<nav>
-						<h3 className='mt-6 text-xs font-bold tracking-wide text-gray-600 uppercase'>
-							Issues
-						</h3>
-						<Nav links={issues} />
-						<h3 className='mt-6 text-xs font-bold tracking-wide text-gray-600 uppercase'>
-							Tags
-						</h3>
-						<Nav links={tags} />
-						<div className='mt-4 -ml-1'>
-							<button className='flex items-center w-full py-2 text-gray-600 rounded-lg hover:bg-gray-200 focus:bg-gray-200'>
-								<svg
-									className='w-5 h-5 text-gray-500'
-									fill='none'
-									stroke='currentColor'
-									viewBox='0 0 24 24'
-									xmlns='http://www.w3.org/2000/svg'
-								>
-									<path
-										strokeLinecap='round'
-										strokeLinejoin='round'
-										strokeWidth={2}
-										d='M12 6v6m0 0v6m0-6h6m-6 0H6'
-									/>
-								</svg>
-								<span className='ml-2 text-sm font-medium tracking-wide'>
-									New Project
-								</span>
-							</button>
-						</div>
-					</nav>
-				</aside>
+				<Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
 				<div className='flex flex-col flex-1 min-w-0 overflow-hidden bg-white'>
 					<div className='border-b-2 border-gray-200'>
 						<header className='px-6'>
 							<div className='flex items-center justify-between py-3 border-b border-gray-200'>
+								<button
+									onClick={toggleSidebar}
+									className='text-gray-600 lg:hidden'
+								>
+									<svg
+										className='w-6 h-6'
+										fill='none'
+										stroke='currentColor'
+										viewBox='0 0 24 24'
+										xmlns='http://www.w3.org/2000/svg'
+									>
+										<path
+											strokeLinecap='round'
+											strokeLinejoin='round'
+											strokeWidth={2}
+											d='M4 6h16M4 12h16M4 18h7'
+										/>
+									</svg>
+								</button>
 								<div className='relative'>
 									<span className='absolute inset-y-0 left-0 flex items-center pl-3'>
 										<svg
@@ -219,50 +194,57 @@ export default function IndexPage() {
 						</header>
 					</div>
 					<main className='flex-1 overflow-auto'>
-						<div className='inline-flex p-3 space-x-3'>
-							<section className='flex-shrink-0 p-3 bg-gray-100 rounded-md w-80'>
-								<h3 className='text-sm font-medium'>Backlog</h3>
-								<ol>
+						<div className='inline-flex h-full p-3 space-x-3 overflow-hidden'>
+							<Column>
+								<Column.Header>Backlog</Column.Header>
+								<Column.Body>
 									{users.map(user => (
-										<li key={user.name} className='my-3'>
-											<Card />
-										</li>
-									))}
-								</ol>
-							</section>
-							<section className='flex-shrink-0 p-3 bg-gray-100 rounded-md w-80'>
-								<h3 className='text-sm font-medium'>In Progress</h3>
-								<ol>
-									{users.map(user => (
-										<li key={user.name} className='my-3'>
+										<li key={user.name}>
 											<Card />
 										</li>
 									))}
 									{users.map(user => (
-										<li key={user.name} className='my-3'>
+										<li key={user.name}>
 											<Card />
 										</li>
 									))}
-								</ol>
-							</section>
-							<section className='flex-shrink-0 p-3 bg-gray-100 rounded-md w-80'>
-								<h3 className='text-sm font-medium'>Testing</h3>
-								<ol>
-									<li className='my-3'>
-										<Card />
-									</li>
-								</ol>
-							</section>
-							<section className='flex-shrink-0 p-3 bg-gray-100 rounded-md w-80'>
-								<h3 className='text-sm font-medium'>Deployed</h3>
-								<ol>
+								</Column.Body>
+							</Column>
+							<Column>
+								<Column.Header>On Progress</Column.Header>
+								<Column.Body>
 									{users.map(user => (
-										<li key={user.name} className='my-3'>
+										<li key={user.name}>
 											<Card />
 										</li>
 									))}
-								</ol>
-							</section>
+								</Column.Body>
+							</Column>
+							<Column>
+								<Column.Header>Testing</Column.Header>
+								<Column.Body>
+									{users.map(user => (
+										<li key={user.name}>
+											<Card />
+										</li>
+									))}
+								</Column.Body>
+							</Column>
+							<Column>
+								<Column.Header>Deployed</Column.Header>
+								<Column.Body>
+									{users.map(user => (
+										<li key={user.name}>
+											<Card />
+										</li>
+									))}
+									{users.map(user => (
+										<li key={user.name}>
+											<Card />
+										</li>
+									))}
+								</Column.Body>
+							</Column>
 						</div>
 					</main>
 				</div>
