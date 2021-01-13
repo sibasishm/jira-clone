@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Avatar from '../components/avatar';
 import Card from '../components/card';
+import Column from '../components/column';
 import Nav from '../components/nav';
 
 const issues = [
@@ -219,50 +220,57 @@ export default function IndexPage() {
 						</header>
 					</div>
 					<main className='flex-1 overflow-auto'>
-						<div className='inline-flex p-3 space-x-3'>
-							<section className='flex-shrink-0 p-3 bg-gray-100 rounded-md w-80'>
-								<h3 className='text-sm font-medium'>Backlog</h3>
-								<ol>
+						<div className='inline-flex h-full p-3 space-x-3 overflow-hidden'>
+							<Column>
+								<Column.Header>Backlog</Column.Header>
+								<Column.Body>
 									{users.map(user => (
-										<li key={user.name} className='my-3'>
-											<Card />
-										</li>
-									))}
-								</ol>
-							</section>
-							<section className='flex-shrink-0 p-3 bg-gray-100 rounded-md w-80'>
-								<h3 className='text-sm font-medium'>In Progress</h3>
-								<ol>
-									{users.map(user => (
-										<li key={user.name} className='my-3'>
+										<li key={user.name}>
 											<Card />
 										</li>
 									))}
 									{users.map(user => (
-										<li key={user.name} className='my-3'>
+										<li key={user.name}>
 											<Card />
 										</li>
 									))}
-								</ol>
-							</section>
-							<section className='flex-shrink-0 p-3 bg-gray-100 rounded-md w-80'>
-								<h3 className='text-sm font-medium'>Testing</h3>
-								<ol>
-									<li className='my-3'>
-										<Card />
-									</li>
-								</ol>
-							</section>
-							<section className='flex-shrink-0 p-3 bg-gray-100 rounded-md w-80'>
-								<h3 className='text-sm font-medium'>Deployed</h3>
-								<ol>
+								</Column.Body>
+							</Column>
+							<Column>
+								<Column.Header>On Progress</Column.Header>
+								<Column.Body>
 									{users.map(user => (
-										<li key={user.name} className='my-3'>
+										<li key={user.name}>
 											<Card />
 										</li>
 									))}
-								</ol>
-							</section>
+								</Column.Body>
+							</Column>
+							<Column>
+								<Column.Header>Testing</Column.Header>
+								<Column.Body>
+									{users.map(user => (
+										<li key={user.name}>
+											<Card />
+										</li>
+									))}
+								</Column.Body>
+							</Column>
+							<Column>
+								<Column.Header>Deployed</Column.Header>
+								<Column.Body>
+									{users.map(user => (
+										<li key={user.name}>
+											<Card />
+										</li>
+									))}
+									{users.map(user => (
+										<li key={user.name}>
+											<Card />
+										</li>
+									))}
+								</Column.Body>
+							</Column>
 						</div>
 					</main>
 				</div>
