@@ -53,29 +53,13 @@ export default function IndexPage() {
 						<header>
 							<div className='px-4 sm:px-6'>
 								<div className='flex items-center justify-between py-3 border-b border-gray-200'>
-									<button
-										onClick={toggleSidebar}
-										className='text-gray-600 lg:hidden'
-									>
-										<svg
-											className='w-6 h-6'
-											fill='none'
-											stroke='currentColor'
-											viewBox='0 0 24 24'
-											xmlns='http://www.w3.org/2000/svg'
+									<div className='flex flex-1 min-w-0'>
+										<button
+											onClick={toggleSidebar}
+											className='text-gray-600 lg:hidden'
 										>
-											<path
-												strokeLinecap='round'
-												strokeLinejoin='round'
-												strokeWidth={2}
-												d='M4 6h16M4 12h16M4 18h7'
-											/>
-										</svg>
-									</button>
-									<div className='relative'>
-										<span className='absolute inset-y-0 left-0 flex items-center pl-3'>
 											<svg
-												className='w-6 h-6 text-gray-500'
+												className='w-6 h-6'
 												fill='none'
 												stroke='currentColor'
 												viewBox='0 0 24 24'
@@ -85,23 +69,41 @@ export default function IndexPage() {
 													strokeLinecap='round'
 													strokeLinejoin='round'
 													strokeWidth={2}
-													d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z'
+													d='M4 6h16M4 12h16M4 18h7'
 												/>
 											</svg>
-										</span>
-										<label htmlFor='search' className='sr-only'>
-											Search
-										</label>
-										<input
-											type='text'
-											name='search'
-											id='serach'
-											placeholder='Search'
-											autoComplete='off'
-											className='py-2 pl-12 pr-4 placeholder-gray-400 border border-gray-300 rounded-md'
-										/>
+										</button>
+										<div className='relative flex-shrink w-64 ml-3 lg:ml-0'>
+											<span className='absolute inset-y-0 left-0 flex items-center pl-2'>
+												<svg
+													className='w-5 h-5 text-gray-500'
+													fill='none'
+													stroke='currentColor'
+													viewBox='0 0 24 24'
+													xmlns='http://www.w3.org/2000/svg'
+												>
+													<path
+														strokeLinecap='round'
+														strokeLinejoin='round'
+														strokeWidth={2}
+														d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z'
+													/>
+												</svg>
+											</span>
+											<label htmlFor='search' className='sr-only'>
+												Search
+											</label>
+											<input
+												type='text'
+												name='search'
+												id='serach'
+												placeholder='Search'
+												autoComplete='off'
+												className='block w-full py-2 pl-8 pr-4 text-sm placeholder-gray-400 border border-gray-300 rounded-md'
+											/>
+										</div>
 									</div>
-									<div className='flex items-center'>
+									<div className='flex items-center flex-shrink-0 ml-6'>
 										<button>
 											<svg
 												className='w-6 h-6 text-gray-400'
@@ -118,7 +120,7 @@ export default function IndexPage() {
 												/>
 											</svg>
 										</button>
-										<button className='ml-6'>
+										<button className='ml-3 sm:ml-6'>
 											<img
 												className='object-cover rounded-full w-9 h-9'
 												src='https://images.unsplash.com/photo-1463453091185-61582044d556?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=3.5&w=144&h=144&q=80'
@@ -209,7 +211,9 @@ export default function IndexPage() {
 											d='M4 6h16M4 10h16M4 14h16M4 18h16'
 										/>
 									</svg>
-									<span className='ml-2 text-sm font-medium'>List</span>
+									<span className='ml-2 text-sm font-medium text-gray-600'>
+										List
+									</span>
 								</button>
 								<button className='inline-flex items-center justify-center w-1/2 px-3 py-1.5 ml-1 bg-white rounded shadow'>
 									<svg
