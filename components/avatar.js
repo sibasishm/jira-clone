@@ -1,7 +1,11 @@
 export default function Avatar({ users }) {
-	return users.map(user => (
+	return users.map((user, idx) => (
 		<>
-			<span className='-ml-2 border-2 border-white rounded-full'>
+			<span
+				className={`${
+					idx !== 0 ? '-ml-2' : 'm-0'
+				} border-2 border-white rounded-full`}
+			>
 				<img
 					src={user.avatar}
 					alt={`${user.name} profile image`}
