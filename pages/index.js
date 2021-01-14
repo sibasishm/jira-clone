@@ -48,6 +48,11 @@ export default function IndexPage() {
 			</Head>
 			<div className='flex h-screen'>
 				<Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
+				<div
+					className={`${
+						isSidebarOpen ? 'block' : 'hidden'
+					} fixed inset-0 bg-black opacity-50 lg:hidden`}
+				></div>
 				<div className='flex flex-col flex-1 min-w-0 overflow-hidden bg-white'>
 					<div className='sm:border-b-2 sm:border-gray-200'>
 						<header>
@@ -103,7 +108,7 @@ export default function IndexPage() {
 											/>
 										</div>
 									</div>
-									<div className='flex items-center flex-shrink-0 ml-6'>
+									<div className='flex items-center flex-shrink-0 ml-3'>
 										<button>
 											<svg
 												className='w-6 h-6 text-gray-400'
